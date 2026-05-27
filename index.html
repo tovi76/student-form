@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>טופס רישום תלמידים</title>
+  <title>׳˜׳•׳₪׳¡ ׳¨׳™׳©׳•׳ ׳×׳׳׳™׳“׳™׳</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -454,7 +454,7 @@
 </head>
 <body>
 
-<button class="gear-btn" onclick="openConfig()" title="הגדרות חיבור">⚙️</button>
+<button class="gear-btn" onclick="openConfig()" title="׳”׳’׳“׳¨׳•׳× ׳—׳™׳‘׳•׳¨">ג™ן¸</button>
 
 <div class="card">
   <div class="card-header">
@@ -462,96 +462,87 @@
       <span class="dot"></span>
       Google Sheets Live
     </div>
-    <h1>טופס <span>רישום</span> תלמידים</h1>
-    <p class="subtitle">הנתונים נטענים בזמן אמת מגוגל שיטס</p>
+    <h1>׳˜׳•׳₪׳¡ <span>׳¨׳™׳©׳•׳</span> ׳×׳׳׳™׳“׳™׳</h1>
+    <p class="subtitle">׳”׳ ׳×׳•׳ ׳™׳ ׳ ׳˜׳¢׳ ׳™׳ ׳‘׳–׳׳ ׳׳׳× ׳׳’׳•׳’׳ ׳©׳™׳˜׳¡</p>
   </div>
 
   <div id="connBanner" class="conn-banner loading">
-    <span class="conn-icon">⏳</span>
-    <span id="connText">טוען נתונים מ-Google Sheets...</span>
+    <span class="conn-icon">ג³</span>
+    <span id="connText">׳˜׳•׳¢׳ ׳ ׳×׳•׳ ׳™׳ ׳-Google Sheets...</span>
   </div>
 
   <div class="refresh-row">
-    <span class="last-updated" id="lastUpdated">—</span>
+    <span class="last-updated" id="lastUpdated">ג€”</span>
     <button class="refresh-btn" id="refreshBtn" onclick="loadStudents()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.16"/>
       </svg>
-      רענן רשימה
+      ׳¨׳¢׳ ׳ ׳¨׳©׳™׳׳”
     </button>
   </div>
 
   <!-- Field 1: Student name autocomplete -->
   <div class="field">
-    <label><span class="req">*</span> שם התלמיד</label>
+    <label><span class="req">*</span> ׳©׳ ׳”׳×׳׳׳™׳“</label>
     <div class="autocomplete-wrap">
       <div class="input-wrap">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon">נ”</span>
         <input
           type="text"
           id="studentInput"
-          placeholder="הקלד שם תלמיד..."
+          placeholder="׳”׳§׳׳“ ׳©׳ ׳×׳׳׳™׳“..."
           autocomplete="off"
           oninput="onStudentInput()"
           onfocus="onStudentFocus()"
           onkeydown="onStudentKeydown(event)"
         />
-        <button class="clear-btn" id="clearBtn" onclick="clearStudent()">✕</button>
+        <button class="clear-btn" id="clearBtn" onclick="clearStudent()">ג•</button>
       </div>
       <div class="dropdown" id="dropdown"></div>
     </div>
     <div class="selected-chip" id="selectedChip">
-      <span>✓</span>
+      <span>ג“</span>
       <span id="selectedName"></span>
-      <button class="chip-remove" onclick="clearStudent()">✕</button>
+      <button class="chip-remove" onclick="clearStudent()">ג•</button>
     </div>
   </div>
 
   <!-- Field 2: Date -->
   <div class="field">
-    <label><span class="req">*</span> תאריך</label>
+    <label><span class="req">*</span> ׳×׳׳¨׳™׳</label>
     <input type="date" id="dateInput" />
   </div>
 
   <!-- Field 3: Note -->
   <div class="field">
-    <label>הערה</label>
-    <input type="text" id="noteInput" placeholder="הערה אופציונלית..." />
+    <label>׳”׳¢׳¨׳”</label>
+    <input type="text" id="noteInput" placeholder="׳”׳¢׳¨׳” ׳׳•׳₪׳¦׳™׳•׳ ׳׳™׳×..." />
   </div>
 
   <hr class="divider" />
 
   <button class="submit-btn" id="submitBtn" onclick="handleSubmit()" disabled>
-    שלח טופס → Google Sheets
+    ׳©׳׳— ׳˜׳•׳₪׳¡ ג†’ Google Sheets
   </button>
 </div>
 
 <!-- Config Modal -->
 <div class="modal-overlay" id="configModal">
   <div class="modal">
-    <h2>⚙️ הגדרות חיבור</h2>
-    <p>הגדר את פרטי ה-Google Sheets שלך. הנתונים נשמרים ב-localStorage של הדפדפן.</p>
+    <h2>ג™ן¸ ׳”׳’׳“׳¨׳•׳× ׳—׳™׳‘׳•׳¨</h2>
+    <p>׳”׳’׳“׳¨ ׳׳× ׳₪׳¨׳˜׳™ ׳”-Google Sheets ׳©׳׳. ׳”׳ ׳×׳•׳ ׳™׳ ׳ ׳©׳׳¨׳™׳ ׳‘-localStorage ׳©׳ ׳”׳“׳₪׳“׳₪׳.</p>
 
-    <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:6px">Sheet ID</label>
-    <input type="text" id="cfgSheetId" placeholder="1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms" />
-
-    <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:6px">שם הגיליון (Tab)</label>
-    <input type="text" id="cfgSheetName" placeholder="תלמידים" />
-
-    <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:6px">טווח שמות (Column)</label>
-    <input type="text" id="cfgRange" placeholder="A2:A" />
-
-    <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:6px">Apps Script URL (לשליחה)</label>
-    <input type="text" id="cfgScriptUrl" placeholder="https://script.google.com/macros/s/YOUR_ID/exec" />
+    <label style="font-size:12px;color:var(--text-muted);display:block;margin-bottom:6px">Make Webhook URL</label>
+    <input type="text" id="cfgMakeUrl" placeholder="https://hook.eu2.make.com/..." />
 
     <div class="modal-hint">
-      📌 כדי לאפשר קריאה ציבורית: ב-Google Sheets → Share → "Anyone with the link" → Viewer.<br/>
-      URL לקריאה: <code>sheets.googleapis.com/v4/spreadsheets/{ID}/values/{Range}?key={API_KEY}</code>
+      נ“ ׳”׳“׳‘׳™׳§׳™ ׳׳× ׳”-Webhook URL ׳©׳§׳™׳‘׳׳× ׳-Make.<br/>
+      ׳”-Webhook ׳׳˜׳₪׳ ׳’׳ ׳‘׳˜׳¢׳™׳ ׳× ׳”׳×׳׳׳™׳“׳™׳ ׳•׳’׳ ׳‘׳©׳׳™׳¨׳× ׳”׳˜׳•׳₪׳¡.
     </div>
 
     <div class="modal-actions">
-      <button class="btn-primary" onclick="saveConfig()">שמור והתחבר</button>
-      <button class="btn-secondary" onclick="useMockData()">השתמש בנתוני Demo</button>
+      <button class="btn-primary" onclick="saveConfig()">׳©׳׳•׳¨ ׳•׳”׳×׳—׳‘׳¨</button>
+      <button class="btn-secondary" onclick="useMockData()">׳”׳©׳×׳׳© ׳‘׳ ׳×׳•׳ ׳™ Demo</button>
     </div>
   </div>
 </div>
@@ -560,13 +551,9 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ── Config ────────────────────────────────────────────────────
+// ג”€ג”€ Config ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 let config = {
-  sheetId: '',
-  sheetName: 'תלמידים',
-  range: 'A2:A',
-  scriptUrl: '',
-  apiKey: ''   // optional: for public sheets without service account
+  makeUrl: '',   // Make Webhook URL
 };
 
 function loadConfig() {
@@ -575,73 +562,71 @@ function loadConfig() {
 }
 
 function saveConfig() {
-  config.sheetId   = document.getElementById('cfgSheetId').value.trim();
-  config.sheetName = document.getElementById('cfgSheetName').value.trim() || 'תלמידים';
-  config.range     = document.getElementById('cfgRange').value.trim() || 'A2:A';
-  config.scriptUrl = document.getElementById('cfgScriptUrl').value.trim();
+  config.makeUrl = document.getElementById('cfgMakeUrl').value.trim();
   localStorage.setItem('gsform_config', JSON.stringify(config));
   closeConfig();
   loadStudents();
 }
 
 function openConfig() {
-  document.getElementById('cfgSheetId').value   = config.sheetId;
-  document.getElementById('cfgSheetName').value = config.sheetName;
-  document.getElementById('cfgRange').value     = config.range;
-  document.getElementById('cfgScriptUrl').value = config.scriptUrl;
+  document.getElementById('cfgMakeUrl').value = config.makeUrl || '';
   document.getElementById('configModal').style.display = 'flex';
 }
 function closeConfig() {
   document.getElementById('configModal').style.display = 'none';
 }
 
-// ── Students data ─────────────────────────────────────────────
+// ג”€ג”€ Students data ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 let allStudents = [];
 let selectedStudent = null;
 let dropActiveIdx = -1;
 
 const MOCK_STUDENTS = [
-  'אבנר כהן','אביגיל לוי','אדם מזרחי','אורי פרץ','אורית גולן',
-  'איילת שמיר','אלון ברק','אמיר סלע','אסף דוד','בן צבי',
-  'גיא שפירא','דנה אברהם','דניאל יוסף','הדר נחום','הילה ריבקין',
-  'טל מור','יונתן שרון','יעל כץ','יעקב פישר','כרמל רוזן',
-  'לי ניר','ליאור בן דוד','ליאת אשכנזי','מאיה גרין','מוראל חיים',
-  'מיכל זיו','נועה פלד','נוי אדרי','נמרוד שטיין','סהר בן עמי',
-  'עומר לבני','עינב כהן','פנינה ברנשטיין','צחי מלכה','רון אלמוג',
-  'רונית גבע','שגית מנחם','שי ויצמן','תמי גוטמן','תמר הרצוג'
+  '׳׳‘׳ ׳¨ ׳›׳”׳','׳׳‘׳™׳’׳™׳ ׳׳•׳™','׳׳“׳ ׳׳–׳¨׳—׳™','׳׳•׳¨׳™ ׳₪׳¨׳¥','׳׳•׳¨׳™׳× ׳’׳•׳׳',
+  '׳׳™׳™׳׳× ׳©׳׳™׳¨','׳׳׳•׳ ׳‘׳¨׳§','׳׳׳™׳¨ ׳¡׳׳¢','׳׳¡׳£ ׳“׳•׳“','׳‘׳ ׳¦׳‘׳™',
+  '׳’׳™׳ ׳©׳₪׳™׳¨׳','׳“׳ ׳” ׳׳‘׳¨׳”׳','׳“׳ ׳™׳׳ ׳™׳•׳¡׳£','׳”׳“׳¨ ׳ ׳—׳•׳','׳”׳™׳׳” ׳¨׳™׳‘׳§׳™׳',
+  '׳˜׳ ׳׳•׳¨','׳™׳•׳ ׳×׳ ׳©׳¨׳•׳','׳™׳¢׳ ׳›׳¥','׳™׳¢׳§׳‘ ׳₪׳™׳©׳¨','׳›׳¨׳׳ ׳¨׳•׳–׳',
+  '׳׳™ ׳ ׳™׳¨','׳׳™׳׳•׳¨ ׳‘׳ ׳“׳•׳“','׳׳™׳׳× ׳׳©׳›׳ ׳–׳™','׳׳׳™׳” ׳’׳¨׳™׳','׳׳•׳¨׳׳ ׳—׳™׳™׳',
+  '׳׳™׳›׳ ׳–׳™׳•','׳ ׳•׳¢׳” ׳₪׳׳“','׳ ׳•׳™ ׳׳“׳¨׳™','׳ ׳׳¨׳•׳“ ׳©׳˜׳™׳™׳','׳¡׳”׳¨ ׳‘׳ ׳¢׳׳™',
+  '׳¢׳•׳׳¨ ׳׳‘׳ ׳™','׳¢׳™׳ ׳‘ ׳›׳”׳','׳₪׳ ׳™׳ ׳” ׳‘׳¨׳ ׳©׳˜׳™׳™׳','׳¦׳—׳™ ׳׳׳›׳”','׳¨׳•׳ ׳׳׳׳•׳’',
+  '׳¨׳•׳ ׳™׳× ׳’׳‘׳¢','׳©׳’׳™׳× ׳׳ ׳—׳','׳©׳™ ׳•׳™׳¦׳׳','׳×׳׳™ ׳’׳•׳˜׳׳','׳×׳׳¨ ׳”׳¨׳¦׳•׳’'
 ];
 
 async function loadStudents() {
   const btn = document.getElementById('refreshBtn');
   btn.classList.add('spinning');
-  setBanner('loading', '⏳', 'טוען נתונים מ-Google Sheets...');
+  setBanner('loading', 'ג³', '׳˜׳•׳¢׳ ׳ ׳×׳•׳ ׳™׳ ׳-Google Sheets...');
 
   try {
-    if (!config.scriptUrl) {
+    if (!config.makeUrl) {
       throw new Error('NO_CONFIG');
     }
 
-    // טוען תלמידים ישירות מ-Apps Script (ללא CORS)
-    const res = await fetch(config.scriptUrl, { signal: AbortSignal.timeout(8000) });
+    // ׳˜׳•׳¢׳ ׳×׳׳׳™׳“׳™׳ ׳“׳¨׳ Make Webhook
+    const res = await fetch(config.makeUrl + '?action=getStudents', { signal: AbortSignal.timeout(10000) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
 
     const values = json.students ?? [];
-    allStudents = values.filter(v => v && v.trim()).map(v => v.trim());
+    // ׳×׳•׳׳ ׳‘׳©׳ ׳™ ׳₪׳•׳¨׳׳˜׳™׳: ["׳©׳"] ׳•׳’׳ [{"0":"׳©׳"}]
+    allStudents = values
+      .map(v => (typeof v === 'object' ? v['0'] ?? Object.values(v)[0] : v))
+      .filter(v => v && String(v).trim())
+      .map(v => String(v).trim());
 
     if (!allStudents.length) throw new Error('EMPTY');
 
-    setBanner('ok', '✅', `נטענו ${allStudents.length} תלמידים בהצלחה`);
+    setBanner('ok', 'ג…', `׳ ׳˜׳¢׳ ׳• ${allStudents.length} ׳×׳׳׳™׳“׳™׳ ׳‘׳”׳¦׳׳—׳”`);
     setLastUpdated();
   } catch (err) {
     if (err.message === 'NO_CONFIG') {
-      setBanner('error', '⚙️', 'לא הוגדר Apps Script URL — לחצי על ⚙️ להגדרה');
+      setBanner('error', 'ג™ן¸', '׳׳ ׳”׳•׳’׳“׳¨ Apps Script URL ג€” ׳׳—׳¦׳™ ׳¢׳ ג™ן¸ ׳׳”׳’׳“׳¨׳”');
       useMockData(true);
     } else if (err.message === 'EMPTY') {
-      setBanner('error', '⚠️', 'הגיליון ריק — בדוק את הטווח שהוגדר');
+      setBanner('error', 'ג ן¸', '׳”׳’׳™׳׳™׳•׳ ׳¨׳™׳§ ג€” ׳‘׳“׳•׳§ ׳׳× ׳”׳˜׳•׳•׳— ׳©׳”׳•׳’׳“׳¨');
       useMockData(true);
     } else {
-      setBanner('error', '❌', 'שגיאת חיבור — עובד עם נתוני Demo');
+      setBanner('error', 'ג', '׳©׳’׳™׳׳× ׳—׳™׳‘׳•׳¨ ג€” ׳¢׳•׳‘׳“ ׳¢׳ ׳ ׳×׳•׳ ׳™ Demo');
       useMockData(true);
     }
   } finally {
@@ -652,7 +637,7 @@ async function loadStudents() {
 function useMockData(silent = false) {
   allStudents = [...MOCK_STUDENTS];
   if (!silent) {
-    setBanner('ok', '🎭', `Demo: ${allStudents.length} תלמידים לדוגמה`);
+    setBanner('ok', 'נ­', `Demo: ${allStudents.length} ׳×׳׳׳™׳“׳™׳ ׳׳“׳•׳’׳׳”`);
     setLastUpdated();
     closeConfig();
   }
@@ -669,10 +654,10 @@ function setBanner(type, icon, text) {
 function setLastUpdated() {
   const now = new Date();
   document.getElementById('lastUpdated').textContent =
-    `עודכן: ${now.toLocaleTimeString('he-IL', {hour:'2-digit',minute:'2-digit'})}`;
+    `׳¢׳•׳“׳›׳: ${now.toLocaleTimeString('he-IL', {hour:'2-digit',minute:'2-digit'})}`;
 }
 
-// ── Fuzzy search ──────────────────────────────────────────────
+// ג”€ג”€ Fuzzy search ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 function fuzzyScore(name, query) {
   // Simple: check if all chars of query appear in order in name
   const n = name.toLowerCase();
@@ -709,7 +694,7 @@ function filterStudents(query) {
     .map(x => x.s);
 }
 
-// ── Autocomplete UI ───────────────────────────────────────────
+// ג”€ג”€ Autocomplete UI ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 let currentQuery = '';
 let filtered = [];
 
@@ -732,12 +717,12 @@ function renderDropdown() {
   dropActiveIdx = -1;
 
   if (!filtered.length) {
-    dd.innerHTML = `<div class="drop-empty">לא נמצאו תלמידים התואמים "${currentQuery}"</div>`;
+    dd.innerHTML = `<div class="drop-empty">׳׳ ׳ ׳׳¦׳׳• ׳×׳׳׳™׳“׳™׳ ׳”׳×׳•׳׳׳™׳ "${currentQuery}"</div>`;
   } else {
-    const countHtml = `<div class="drop-count">${filtered.length} תוצאות</div>`;
+    const countHtml = `<div class="drop-count">${filtered.length} ׳×׳•׳¦׳׳•׳×</div>`;
     const items = filtered.map((s, i) =>
       `<div class="drop-item" data-i="${i}" onmousedown="selectStudent('${s.replace(/'/g,"\\'")}')">
-        <span>👤</span>
+        <span>נ‘₪</span>
         <span>${highlightMatch(s, currentQuery)}</span>
       </div>`
     ).join('');
@@ -799,10 +784,10 @@ function updateChip() {
   if (selectedStudent) {
     chip.classList.add('visible');
     name.textContent = selectedStudent;
-    document.getElementById('studentInput').placeholder = 'שנה בחירה...';
+    document.getElementById('studentInput').placeholder = '׳©׳ ׳” ׳‘׳—׳™׳¨׳”...';
   } else {
     chip.classList.remove('visible');
-    document.getElementById('studentInput').placeholder = 'הקלד שם תלמיד...';
+    document.getElementById('studentInput').placeholder = '׳”׳§׳׳“ ׳©׳ ׳×׳׳׳™׳“...';
   }
 }
 
@@ -814,7 +799,7 @@ document.addEventListener('click', (e) => {
   if (!e.target.closest('.autocomplete-wrap')) closeDropdown();
 });
 
-// ── Submit ────────────────────────────────────────────────────
+// ג”€ג”€ Submit ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 function updateSubmitBtn() {
   const ok = !!selectedStudent && !!document.getElementById('dateInput').value;
   document.getElementById('submitBtn').disabled = !ok;
@@ -825,7 +810,7 @@ document.getElementById('dateInput').addEventListener('change', updateSubmitBtn)
 async function handleSubmit() {
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
-  btn.textContent = '⏳ שולח...';
+  btn.textContent = 'ג³ ׳©׳•׳׳—...';
 
   const payload = {
     student: selectedStudent,
@@ -834,28 +819,28 @@ async function handleSubmit() {
   };
 
   try {
-    if (!config.scriptUrl) throw new Error('NO_SCRIPT');
+    if (!config.makeUrl) throw new Error('NO_SCRIPT');
 
-    const res = await fetch(config.scriptUrl, {
+    const res = await fetch(config.makeUrl, {
       method: 'POST',
       body: JSON.stringify(payload),
-      headers: { 'Content-Type': 'text/plain' }, // Apps Script needs text/plain for CORS
+      headers: { 'Content-Type': 'application/json' },
     });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    showToast('success', '✅ הטופס נשלח בהצלחה ל-Google Sheets!');
+    showToast('success', 'ג… ׳”׳˜׳•׳₪׳¡ ׳ ׳©׳׳— ׳‘׳”׳¦׳׳—׳” ׳-Google Sheets!');
     resetForm();
   } catch (err) {
     if (err.message === 'NO_SCRIPT') {
-      showToast('success', `✅ Demo: הטופס יישלח עם Apps Script URL`);
+      showToast('success', `ג… Demo: ׳”׳˜׳•׳₪׳¡ ׳™׳™׳©׳׳— ׳¢׳ Apps Script URL`);
       console.log('Payload that would be sent:', payload);
       resetForm();
     } else {
-      showToast('error', `❌ שגיאה בשליחה: ${err.message}`);
+      showToast('error', `ג ׳©׳’׳™׳׳” ׳‘׳©׳׳™׳—׳”: ${err.message}`);
     }
   } finally {
     btn.disabled = false;
-    btn.textContent = 'שלח טופס → Google Sheets';
+    btn.textContent = '׳©׳׳— ׳˜׳•׳₪׳¡ ג†’ Google Sheets';
     updateSubmitBtn();
   }
 }
@@ -866,7 +851,7 @@ function resetForm() {
   document.getElementById('noteInput').value = '';
 }
 
-// ── Toast ─────────────────────────────────────────────────────
+// ג”€ג”€ Toast ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 function showToast(type, msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -874,15 +859,15 @@ function showToast(type, msg) {
   setTimeout(() => t.classList.remove('show'), 3500);
 }
 
-// ── Init ──────────────────────────────────────────────────────
+// ג”€ג”€ Init ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€ג”€
 loadConfig();
 
 // Set today's date as default
 document.getElementById('dateInput').value = new Date().toISOString().split('T')[0];
 
-// Auto-load — if no config, show modal after brief delay
+// Auto-load ג€” if no config, show modal after brief delay
 window.addEventListener('load', () => {
-  if (!config.sheetId) {
+  if (!config.makeUrl) {
     setTimeout(() => openConfig(), 600);
   } else {
     loadStudents();
