@@ -7,18 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0f0f13;
-      --surface: #1a1a23;
-      --surface2: #22222e;
-      --border: #2e2e3f;
+      --bg: #f0f4ff;
+      --surface: #ffffff;
+      --surface2: #f7f8fc;
+      --border: #e2e5f0;
       --accent: #6c63ff;
-      --accent2: #a78bfa;
-      --success: #34d399;
-      --error: #f87171;
-      --warning: #fbbf24;
-      --text: #e8e8f0;
-      --text-muted: #8888aa;
-      --text-dim: #555570;
+      --accent2: #5b52e8;
+      --success: #10b981;
+      --error: #ef4444;
+      --warning: #f59e0b;
+      --text: #1e1e2e;
+      --text-muted: #6b7280;
+      --text-dim: #9ca3af;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -31,8 +31,8 @@
       justify-content: center;
       padding: 24px;
       background-image:
-        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(108,99,255,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 10% 80%, rgba(167,139,250,0.07) 0%, transparent 50%);
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(108,99,255,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 10% 80%, rgba(99,179,237,0.08) 0%, transparent 50%);
     }
     .card {
       background: var(--surface);
@@ -41,7 +41,7 @@
       padding: 40px;
       width: 100%;
       max-width: 520px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+      box-shadow: 0 8px 40px rgba(108,99,255,0.1), 0 2px 8px rgba(0,0,0,0.06);
     }
     .card-header { margin-bottom: 36px; }
     .badge {
@@ -186,7 +186,8 @@
     .toast {
       position: fixed; bottom: 24px; left: 50%;
       transform: translateX(-50%) translateY(80px);
-      background: var(--surface2); border: 1px solid var(--border);
+      background: var(--surface); border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
       border-radius: 12px; padding: 12px 20px; font-size: 13.5px; font-weight: 500;
       display: flex; align-items: center; gap: 10px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.4);
@@ -199,8 +200,9 @@
     .gear-btn {
       position: fixed; top: 20px; left: 20px;
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; color: var(--text-dim);
+      border-radius: 10px; color: var(--text-muted);
       padding: 8px 10px; cursor: pointer; font-size: 16px; transition: all 0.15s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     .gear-btn:hover { border-color: var(--accent); color: var(--accent2); }
     /* Duplicate name warning */
@@ -272,7 +274,7 @@
 
   <!-- אפשרויות dropdown מעמודה D -->
   <div class="field">
-    <label><span class="req">*</span> סיבה</label>
+    <label><span class="req">*</span> הארוע</label>
     <select id="reasonSelect" onchange="updateSubmitBtn()">
       <option value="">— בחר —</option>
     </select>
@@ -287,7 +289,7 @@
 
 <!-- Config Modal -->
 <div class="modal-overlay" id="configModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);display:none;align-items:center;justify-content:center;z-index:300;padding:24px;backdrop-filter:blur(4px)">
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:480px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,0.6)">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:480px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,0.12)">
     <h2 style="font-size:20px;font-weight:700;margin-bottom:8px">⚙️ הגדרות חיבור</h2>
     <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.6">Make Webhook URL לטעינת נתונים</p>
     <input type="text" id="cfgMakeUrl" placeholder="https://hook.eu2.make.com/..." style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:Heebo,monospace;font-size:13px;padding:11px 14px;outline:none;margin-bottom:12px;direction:ltr" />
@@ -523,6 +525,7 @@ function showClassDup(matches) {
 function onClassDupChange() {
   const val = document.getElementById('classDup').value;
   if (selectedStudent) selectedStudent.cls = val;
+  if (val) document.getElementById('dupWarning').classList.remove('visible');
   updateSubmitBtn();
 }
 
