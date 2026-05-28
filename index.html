@@ -316,24 +316,22 @@
 
 <div class="toast" id="toast"></div>
 
+<script src="config.js"></script>
 <script>
 // ── Config ────────────────────────────────────────────────────
+// הגדרות נטענות מ-config.js שבאותה תיקייה
 let config = {
-  makeUrl:   'https://hook.eu2.make.com/quev0zz59whstoi8v9068tcyx33jm2ax',
-  submitUrl: ''  // ← Webhook לשליחה (Scenario 2)
+  makeUrl:   (typeof FORM_CONFIG !== 'undefined') ? FORM_CONFIG.loadUrl   : '',
+  submitUrl: (typeof FORM_CONFIG !== 'undefined') ? FORM_CONFIG.submitUrl : '',
 };
 
 function loadConfig() {
-  const saved = localStorage.getItem('gsform_config2');
-  if (saved) Object.assign(config, JSON.parse(saved));
+  // config נטען מ-config.js — אין צורך ב-localStorage
 }
 
 function saveConfig() {
-  config.makeUrl   = document.getElementById('cfgMakeUrl').value.trim() || config.makeUrl;
-  config.submitUrl = document.getElementById('cfgSubmitUrl').value.trim();
-  localStorage.setItem('gsform_config2', JSON.stringify(config));
+  // בעריכה ישירה של config.js בלבד
   closeConfig();
-  loadData();
 }
 
 function openConfig() {
@@ -369,8 +367,9 @@ async function loadData() {
     const raw = json.students ?? [];
     allStudents = raw
       .map(v => ({
-        name: typeof v === 'object' ? (v['0'] ?? '') : v,
-        cls:  typeof v === 'object' ? (v['1'] ?? '') : ''
+        name:  typeof v === 'object' ? (v['0'] ?? '') : v,
+        cls:   typeof v === 'object' ? (v['1'] ?? '') : '',
+        email: typeof v === 'object' ? (v['2'] ?? '') : ''
       }))
       .filter(s => s.name && s.name.trim());
 
@@ -498,7 +497,7 @@ function selectStudentByName(name) {
     showClassAuto(selectedStudent.cls);
   } else {
     // שם כפול — הצג dropdown כיתות
-    selectedStudent = { name, cls: '' };
+    selectedStudent = { name, cls: '', email: '' };
     showClassDup(matches);
   }
 
@@ -601,9 +600,10 @@ async function handleSubmit() {
   btn.textContent = '⏳ שולח...';
 
   const payload = {
-    student: selectedStudent?.name,
-    class:   selectedStudent?.cls || document.getElementById('classAuto').value,
-    reason:  document.getElementById('reasonSelect').value,
+    student:   selectedStudent?.name,
+    class:     selectedStudent?.cls || document.getElementById('classAuto').value,
+    email:     selectedStudent?.email || '',   // נשלח ברקע, לא מוצג למשתמש
+    reason:    document.getElementById('reasonSelect').value,
     timestamp: new Date().toISOString()
   };
 
