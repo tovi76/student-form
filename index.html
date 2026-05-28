@@ -44,6 +44,17 @@
       box-shadow: 0 8px 40px rgba(108,99,255,0.1), 0 2px 8px rgba(0,0,0,0.06);
     }
     .card-header { margin-bottom: 36px; }
+    .confetti-row {
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-bottom: 14px;
+      animation: sway 3s ease-in-out infinite;
+      display: block;
+    }
+    @keyframes sway {
+      0%,100% { transform: rotate(-2deg); }
+      50%      { transform: rotate(2deg); }
+    }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -219,8 +230,9 @@
 
 <div class="card">
   <div class="card-header">
+    <div class="confetti-row">🎉 🎊 🥳 🎈 🎁 🎊 🎉</div>
     <div class="badge"><span class="dot"></span>Google Sheets Live</div>
-    <h1>טופס <span>רישום</span> תלמידים</h1>
+    <h1>מזל טוב <span>ל —</span></h1>
     <p class="subtitle">הנתונים נטענים בזמן אמת מגוגל שיטס</p>
   </div>
 
